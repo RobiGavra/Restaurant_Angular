@@ -1,0 +1,38 @@
+<div class="employee-container">
+  <input type="button" class="btn btn-default add" value="Make a reservation"  [routerLink]="['/Employee/Create']" />
+  <table class="table-container">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Function</th>
+        <th>Start Date</th>
+        <th>Salary</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.PersonDetails.FirstName}}</td>
+        <td>{{employee.PersonDetails.LastName}}</td>
+        <td>{{employee.PersonDetails.PhoneNumber}}</td>
+        <td>{{employee.PersonDetails.Email}}</td>
+        <td>{{employee.Function}}</td>
+        <td>{{formatDate(employee.StartDate) | date: 'dd/MM/yyyy'}}</td>
+        <td>{{employee.Salary}}</td>
+        <td>
+          <input type="button" class="btn btn-default" value="Edit" [routerLink]="['/Employee/Edit', employee.ID]" />
+          <input type="button" class="btn btn-default" value="Details" [routerLink]="['/Employee/Details', employee.ID]" />
+          <input type="button" class="btn btn-default" value="Delete"  [routerLink]="['/Employee/Delete', employee.ID]"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="galery-container">
+    <img src="../../../../Pictures/tablesetting.jpg" />
+    <img src="../../../../Pictures/tablesetting.jpg" />
+    <img src="../../../../Pictures/tablesetting.jpg" />
+  </div>
+</div>

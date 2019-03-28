@@ -1,0 +1,50 @@
+<h3>Edit employee</h3>
+<div *ngIf="employee" class="form-horizontal">
+  <div class="form-group">
+    <label class="control-label col-md-2" for="FirstName">First Name</label>
+    <div class="col-md-10">
+      <input class="form-control" type="text" name="FirstName" [(value)]="employee.PersonDetails.FirstName">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2" for="LastName">Last Name</label>
+    <div class="col-md-10">
+      <input class="form-control" type="text" name="LastName" [(value)]="employee.PersonDetails.LastName">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2" for="PhoneNumber">Phone Number</label>
+    <div class="col-md-10">
+      <input class="form-control" type="text" name="PhoneNumber" [(value)]="employee.PersonDetails.PhoneNumber">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2" for="Email">Email</label>
+    <div class="col-md-10">
+      <input class="form-control" type="email" name="Email" [(value)]="employee.PersonDetails.Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2" for="Function">Function</label>
+    <div class="col-md-10">
+      <input class="form-control" type="text" name="Function" [(value)]="employee.Function">
+    </div>
+  </div>
+   <!--TODO - modify date format , date picker--> 
+  <div class="form-group">
+    <label class="control-label col-md-2" for="StartDate">Start Date</label>
+    <div class="col-md-10">
+      <input class="form-control" type="date" name="StartDate" [(value)]="employee.StartDate">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2" for="Salary">Salary</label>
+    <div class="col-md-10">
+      <input class="form-control" type="text" name="Salary" [(value)]="employee.Salary">
+    </div>
+  </div>
+  <div class="col-md-offset-2 col-md-10">
+    <input type="submit" value="Save" class="btn btn-default" />
+    <input type="button" style="margin-left:10%;" class="btn btn-default" value="Back to Menu"  (click)=" back()"/>
+  </div>
+</div>

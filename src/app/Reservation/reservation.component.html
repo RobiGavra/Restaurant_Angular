@@ -1,0 +1,39 @@
+<div class="reservation-container">
+  <input type="button" class="btn btn-default add" value="Make a reservation"  [routerLink]="['/Reservation/Create']" />
+  <table class="table-container">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Table Number</th>
+        <th>Date</th>
+        <th>Pers Number</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <td>{{reservation.CustomerDetails.FirstName}}</td>
+        <td>{{reservation.CustomerDetails.LastName}}</td>
+        <td>{{reservation.CustomerDetails.PhoneNumber}}</td>
+        <td>{{reservation.CustomerDetails.Email}}</td>
+        <td>{{reservation.TableNo}}</td>
+        <td>{{formatDate(reservation.Date) | date: 'dd/MM/yyyy'}}</td>
+        <td>{{reservation.PersNo}}</td>
+        <td>
+          <input type="button" class="btn btn-default" value="Edit" [routerLink]="['/Reservation/Edit', reservation.ID]"/>
+          <input type="button" class="btn btn-default" value="Details" [routerLink]="['/Reservation/Details', reservation.ID]"/>
+          <input type="button" class="btn btn-default" value="Delete" [routerLink]="['/Reservation/Delete', reservation.ID]"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="galery-container">
+    <img src="../../../../Pictures/tablesetting.jpg" />
+    <img src="../../../../Pictures/tablesetting.jpg" />
+    <img src="../../../../Pictures/tablesetting.jpg" />
+  </div>
+</div>
+
